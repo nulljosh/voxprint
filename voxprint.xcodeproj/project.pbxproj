@@ -25,6 +25,7 @@
 		5147E8ED85517E1C2EB0E2EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF9D1E91E59C9DCDB46932E /* ContentView.swift */; };
 		58727EA565C57496808CEDE6 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF83663B541B3469842D0224 /* SplashView.swift */; };
 		598C602752E19BA975B31B64 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF83663B541B3469842D0224 /* SplashView.swift */; };
+		6008A6F03726FCE4DCD847F6 /* TranscriptionEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1367EEA75FB85DFB1CED7CC5 /* TranscriptionEntryTests.swift */; };
 		663B5D509ACC116EFB7AB42D /* AudioCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422E6C055A2F0E0327F0A62 /* AudioCapture.swift */; };
 		66669373E715CB79F7748CDD /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332A910F82F4863EBB411432 /* SpeechManager.swift */; };
 		781BBE69905286DE0C2A45D1 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6E7245B1913F78E4416A3C /* RecordButton.swift */; };
@@ -62,11 +63,19 @@
 			remoteGlobalIDString = DCFA617113565E7ABE6FB52D;
 			remoteInfo = "Voxprint-iOS";
 		};
+		FF937589D9295AF7F752A462 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE114ED96FEC7AFCBAB95598 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E91DCA098026ECD5A24A7092;
+			remoteInfo = "Voxprint-macOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0008769FF7D3C7D1C86AA1C6 /* MacScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacScreenshot.swift; sourceTree = "<group>"; };
 		04AAAEC8C84344FF57966FFE /* Voxprint-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Voxprint-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1367EEA75FB85DFB1CED7CC5 /* TranscriptionEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionEntryTests.swift; sourceTree = "<group>"; };
 		16C3FD038F68389C5E660B5C /* VoxprintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxprintApp.swift; sourceTree = "<group>"; };
 		1824C0226572018B4E269CFF /* TranscriptionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionEngine.swift; sourceTree = "<group>"; };
 		1E3C83FFB9437708C5B3184B /* voxprint-mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "voxprint-mac.entitlements"; sourceTree = "<group>"; };
@@ -77,6 +86,7 @@
 		4A25EFE8E023889ABCA07D05 /* TranscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionView.swift; sourceTree = "<group>"; };
 		4D6F253829A7D450264E4828 /* VoxprintMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoxprintMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5973D2B96D0B869D7CD87E6E /* VoxprintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxprintApp.swift; sourceTree = "<group>"; };
+		63DEC2A0D702908EFEE6EAEF /* VoxprintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoxprintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FF37B36EDBACBACC37F93D /* WaveformBarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformBarsView.swift; sourceTree = "<group>"; };
 		6EB59A0168192E42A1F29EF0 /* PreviewScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenshot.swift; sourceTree = "<group>"; };
 		72702A5CFAC0AD1F611CE747 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -122,6 +132,7 @@
 				04AAAEC8C84344FF57966FFE /* Voxprint-iOS.app */,
 				7B90C2CEA29D662F995B97EE /* Voxprint-macOS.app */,
 				4D6F253829A7D450264E4828 /* VoxprintMacUITests.xctest */,
+				63DEC2A0D702908EFEE6EAEF /* VoxprintTests.xctest */,
 				DC5E88E51568F90D1E5A8CF4 /* VoxprintUITests.xctest */,
 			);
 			name = Products;
@@ -136,6 +147,14 @@
 				D3A99454A3A13FE624630412 /* WhatsNewSheet.swift */,
 			);
 			path = iOS;
+			sourceTree = "<group>";
+		};
+		5B37322E28927AD2315C07E6 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1367EEA75FB85DFB1CED7CC5 /* TranscriptionEntryTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		7A12FC2CCEF7B3DC268F0916 /* Sources */ = {
@@ -190,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				7A12FC2CCEF7B3DC268F0916 /* Sources */,
+				5B37322E28927AD2315C07E6 /* Tests */,
 				A7522B3576E680E43D787643 /* UITests */,
 				B7351F844B9F1450479F27BF /* UITests-mac */,
 				1AAA0A4B07AE48B28CFEB4A5 /* Products */,
@@ -262,6 +282,24 @@
 			productReference = DC5E88E51568F90D1E5A8CF4 /* VoxprintUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D5AE97ED14D1A4811990EAAF /* VoxprintTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0276BA4E898D599F2B074413 /* Build configuration list for PBXNativeTarget "VoxprintTests" */;
+			buildPhases = (
+				8272DD431F5C3D455902D789 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEA4E13045F96482EDAD6A6B /* PBXTargetDependency */,
+			);
+			name = VoxprintTests;
+			packageProductDependencies = (
+			);
+			productName = VoxprintTests;
+			productReference = 63DEC2A0D702908EFEE6EAEF /* VoxprintTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DCFA617113565E7ABE6FB52D /* Voxprint-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68C12FCF3042C22CBECC2988 /* Build configuration list for PBXNativeTarget "Voxprint-iOS" */;
@@ -319,6 +357,9 @@
 						DevelopmentTeam = QMM486NPYC;
 						TestTargetID = DCFA617113565E7ABE6FB52D;
 					};
+					D5AE97ED14D1A4811990EAAF = {
+						DevelopmentTeam = QMM486NPYC;
+					};
 					DCFA617113565E7ABE6FB52D = {
 						DevelopmentTeam = QMM486NPYC;
 					};
@@ -346,6 +387,7 @@
 			targets = (
 				DCFA617113565E7ABE6FB52D /* Voxprint-iOS */,
 				E91DCA098026ECD5A24A7092 /* Voxprint-macOS */,
+				D5AE97ED14D1A4811990EAAF /* VoxprintTests */,
 				49493D04EC624D522DD3630C /* VoxprintUITests */,
 				05C174F4F7C035326BFB4D1D /* VoxprintMacUITests */,
 			);
@@ -434,6 +476,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8272DD431F5C3D455902D789 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6008A6F03726FCE4DCD847F6 /* TranscriptionEntryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -446,6 +496,11 @@
 			isa = PBXTargetDependency;
 			target = E91DCA098026ECD5A24A7092 /* Voxprint-macOS */;
 			targetProxy = 20EF43BF2BF9DAFEB3946698 /* PBXContainerItemProxy */;
+		};
+		EEA4E13045F96482EDAD6A6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E91DCA098026ECD5A24A7092 /* Voxprint-macOS */;
+			targetProxy = FF937589D9295AF7F752A462 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -466,6 +521,22 @@
 				TEST_TARGET_NAME = "Voxprint-macOS";
 			};
 			name = Debug;
+		};
+		2AE0CE4DFE5175A5AB568E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nulljosh.VoxprintTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voxprint-macOS.app/Contents/MacOS/Voxprint-macOS";
+			};
+			name = Release;
 		};
 		3C24BE4A49C5BF154B68CBE3 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -679,6 +750,22 @@
 			};
 			name = Release;
 		};
+		EB798DD3E7BADC43EAE8980C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nulljosh.VoxprintTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voxprint-macOS.app/Contents/MacOS/Voxprint-macOS";
+			};
+			name = Debug;
+		};
 		F97E1E1AFF7B18CEA50D38BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -716,6 +803,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0276BA4E898D599F2B074413 /* Build configuration list for PBXNativeTarget "VoxprintTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB798DD3E7BADC43EAE8980C /* Debug */,
+				2AE0CE4DFE5175A5AB568E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		0EFA19BAE21BCE57FAA57409 /* Build configuration list for PBXNativeTarget "VoxprintUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
