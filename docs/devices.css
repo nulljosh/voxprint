@@ -1,0 +1,139 @@
+/* devices.css: realistic device frames for landing-page demos and screenshots.
+   Canonical copy lives in nulljosh.github.io (served at heyitsmejosh.com/devices.css);
+   repos keep a local copy next to tokens.css, same as tokens.
+
+   <div class="device device-iphone"><div class="device-screen"><img …></div></div>
+   <div class="device device-ipad"><div class="device-screen">…</div></div>
+   <div class="device device-mac" data-title="App"><div class="device-screen">…</div></div>
+   <div class="device device-mac has-chrome">…</div>   screenshot already has its own titlebar
+   <div class="device device-android">…</div>          punch-hole, squarer corners
+   <div class="device device-windows" data-title="App">…</div>
+
+   Size with --device-w on the element. Everything else scales from it. */
+
+.device { position: relative; margin: 0 auto; box-sizing: border-box; max-width: 100%; }
+.device *, .device *::before, .device *::after { box-sizing: border-box; }
+.device-screen { position: relative; overflow: hidden; background: #000; }
+.device-screen > img, .device-screen > video { display: block; width: 100%; height: auto; }
+
+/* iPhone: titanium band, black bezel, Dynamic Island, home indicator, side buttons */
+.device-iphone, .device-android {
+  --device-w: 280px;
+  --r: calc(var(--device-w) * 0.185);
+  width: var(--device-w);
+  padding: 3px;
+  border-radius: var(--r);
+  background: linear-gradient(150deg, #e4e2de 0%, #9d9b97 22%, #c9c7c3 48%, #7c7a77 75%, #b3b1ad 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.45),
+    0 40px 70px -24px rgba(0,0,0,.55),
+    0 14px 28px -14px rgba(0,0,0,.35);
+}
+.device-iphone .device-screen, .device-android .device-screen {
+  border: calc(var(--device-w) * 0.032) solid #060606;
+  border-radius: calc(var(--r) - 3px);
+  aspect-ratio: 9 / 19.5;
+  background: #000;
+  box-shadow: inset 0 0 0 1px #1c1c1e;
+}
+/* Dynamic Island */
+.device-iphone .device-screen::before {
+  content: ''; position: absolute; z-index: 2; left: 50%; transform: translateX(-50%);
+  top: calc(var(--device-w) * 0.028);
+  width: calc(var(--device-w) * 0.30); height: calc(var(--device-w) * 0.085);
+  border-radius: 999px; background: #000;
+}
+/* Home indicator: white, inverted over light content */
+.device-iphone .device-screen::after, .device-android .device-screen::after {
+  content: ''; position: absolute; z-index: 2; left: 50%; transform: translateX(-50%);
+  bottom: calc(var(--device-w) * 0.022);
+  width: calc(var(--device-w) * 0.36); height: 4px; border-radius: 2px;
+  background: #fff; mix-blend-mode: difference; opacity: .85;
+}
+/* Buttons: action + volume on the left, power on the right */
+.device-iphone::before, .device-iphone::after, .device-android::before, .device-android::after {
+  content: ''; position: absolute; width: 3px; background: linear-gradient(90deg, #a5a3a0, #6e6c69);
+  border-radius: 2px 0 0 2px;
+}
+.device-iphone::before, .device-android::before {
+  left: -3px; top: calc(var(--device-w) * 0.22); height: calc(var(--device-w) * 0.10);
+  box-shadow:
+    0 calc(var(--device-w) * 0.16) 0 0 #8a8885,
+    0 calc(var(--device-w) * 0.30) 0 0 #8a8885;
+}
+.device-iphone::after, .device-android::after {
+  right: -3px; top: calc(var(--device-w) * 0.30); height: calc(var(--device-w) * 0.20);
+  border-radius: 0 2px 2px 0;
+}
+/* Android: no island, a punch-hole camera, squarer corners */
+.device-android { --r: calc(var(--device-w) * 0.10); background: linear-gradient(150deg, #3a3a3c, #1c1c1e 60%, #2c2c2e); }
+.device-android .device-screen::before {
+  content: ''; position: absolute; z-index: 2; left: 50%; transform: translateX(-50%);
+  top: calc(var(--device-w) * 0.03); width: calc(var(--device-w) * 0.045); height: calc(var(--device-w) * 0.045);
+  border-radius: 50%; background: #000; box-shadow: inset 0 0 0 1px #2a2a2a;
+}
+
+/* iPad: thin black bezel, no island, no buttons */
+.device-ipad {
+  --device-w: 420px;
+  width: var(--device-w);
+  padding: 3px;
+  border-radius: calc(var(--device-w) * 0.055);
+  background: linear-gradient(150deg, #e4e2de, #9d9b97 40%, #c9c7c3);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.45), 0 40px 70px -24px rgba(0,0,0,.55);
+}
+.device-ipad .device-screen {
+  border: calc(var(--device-w) * 0.035) solid #060606;
+  border-radius: calc(var(--device-w) * 0.055 - 3px);
+  aspect-ratio: 3 / 4;
+}
+
+/* Mac: a macOS window. Titlebar with traffic lights and a centred title. */
+.device-mac, .device-windows {
+  --device-w: 560px;
+  --bar: #ececec; --bar-text: #3c3c43; --ring: rgba(0,0,0,.16);
+  width: var(--device-w);
+  padding-top: 38px;
+  border-radius: 11px;
+  background: var(--bar);
+  color: var(--bar-text);
+  box-shadow:
+    0 0 0 1px var(--ring),
+    inset 0 1px 0 rgba(255,255,255,.7),
+    0 48px 90px -28px rgba(0,0,0,.5),
+    0 16px 32px -16px rgba(0,0,0,.3);
+}
+.device-mac .device-screen, .device-windows .device-screen { border-radius: 0 0 10px 10px; background: #fff; }
+.device-mac::before {
+  content: ''; position: absolute; top: 13px; left: 14px; width: 12px; height: 12px; border-radius: 50%;
+  background: #ff5f57; box-shadow: 20px 0 0 #febc2e, 40px 0 0 #28c840, inset 0 0 0 .5px rgba(0,0,0,.15);
+}
+.device-mac::after, .device-windows::after {
+  content: attr(data-title); position: absolute; top: 0; left: 0; right: 0; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  font: 600 13px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  letter-spacing: -.01em; opacity: .8; pointer-events: none;
+}
+/* Screenshot already carries its own titlebar: keep only the shadow, ring and corners */
+.device-mac.has-chrome, .device-windows.has-chrome { padding-top: 0; background: none; }
+.device-mac.has-chrome::before, .device-mac.has-chrome::after, .device-windows.has-chrome::after { display: none; }
+.device-mac.has-chrome .device-screen, .device-windows.has-chrome .device-screen { border-radius: 10px; }
+/* Windows: controls on the right, square corners */
+.device-windows { border-radius: 8px; --bar: #f3f3f3; }
+.device-windows .device-screen { border-radius: 0 0 7px 7px; }
+.device-windows::after { justify-content: flex-start; padding-left: 14px; }
+.device-windows::before {
+  content: '\2014\2003\25A1\2003\2715'; position: absolute; top: 0; right: 14px; height: 38px;
+  display: flex; align-items: center; font-size: 11px; letter-spacing: 2px; color: var(--bar-text); opacity: .7;
+}
+
+@media (prefers-color-scheme: dark) {
+  .device-mac, .device-windows { --bar: #3a3a3c; --bar-text: #e5e5ea; --ring: rgba(255,255,255,.14); }
+  .device-mac .device-screen, .device-windows .device-screen { background: #1c1c1e; }
+}
+[data-theme="dark"] .device-mac, [data-theme="dark"] .device-windows { --bar: #3a3a3c; --bar-text: #e5e5ea; --ring: rgba(255,255,255,.14); }
+[data-theme="light"] .device-mac, [data-theme="light"] .device-windows { --bar: #ececec; --bar-text: #3c3c43; --ring: rgba(0,0,0,.16); }
+
+@media (max-width: 640px) {
+  .device-mac, .device-windows, .device-ipad { --device-w: 100%; }
+}
